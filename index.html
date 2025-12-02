@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday NOODLES MANDA 💖</title>
+    <title>Happy Birthday NOODLES MANDA 💙</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,20 +14,21 @@
         }
         
         :root {
-            --cream: #f8f5f0;
-            --rose: #e8b4bc;
-            --gold: #d4af37;
-            --champagne: #f7e7ce;
-            --charcoal: #2c2c2c;
-            --soft-pink: #ffebee;
+            --navy: #0a192f;
+            --royal-blue: #1a365d;
+            --sapphire: #2d46b9;
+            --sky-blue: #38bdf8;
+            --ice-blue: #a5f3fc;
+            --platinum: #e2e8f0;
+            --gold: #fbbf24;
+            --rose: #f472b6;
         }
         
         body {
-            background-color: var(--cream);
-            color: var(--charcoal);
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.6;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--royal-blue) 50%, var(--sapphire) 100%);
+            font-family: 'Poppins', sans-serif;
             min-height: 100vh;
+            color: var(--platinum);
             overflow-x: hidden;
         }
         
@@ -34,9 +36,33 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
+            position: relative;
         }
         
-        /* Elegant Header */
+        /* Stars Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        /* Header */
         .header {
             text-align: center;
             padding: 60px 0 40px;
@@ -50,27 +76,30 @@
             left: 50%;
             transform: translateX(-50%);
             width: 200px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--sky-blue), transparent);
         }
         
         .birthday-title {
-            font-size: 3.2rem;
-            color: var(--charcoal);
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
             font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--ice-blue);
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
         }
         
         .name-highlight {
             display: block;
-            font-size: 4.2rem;
-            color: var(--charcoal);
-            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            color: white;
+            font-weight: 500;
             margin: 30px 0;
             position: relative;
             padding-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .name-highlight:after {
@@ -79,25 +108,33 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background-color: var(--rose);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, var(--sky-blue), var(--rose), var(--gold));
+            border-radius: 2px;
         }
         
         .date {
-            font-size: 1.8rem;
-            color: var(--charcoal);
+            font-size: 2.2rem;
+            color: var(--sky-blue);
             font-style: italic;
-            letter-spacing: 2px;
-            margin-top: 10px;
-            opacity: 0.8;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .date i {
+            color: var(--gold);
         }
         
         /* Main Content */
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             margin: 60px 0;
         }
         
@@ -110,18 +147,21 @@
         
         /* Message Card */
         .message-card {
-            background: white;
+            background: rgba(26, 54, 93, 0.6);
+            backdrop-filter: blur(10px);
             padding: 50px 40px;
-            border-radius: 2px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             position: relative;
-            border: 1px solid rgba(232, 180, 188, 0.2);
+            overflow: hidden;
             transition: transform 0.5s ease, box-shadow 0.5s ease;
         }
         
         .message-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+            border-color: rgba(56, 189, 248, 0.4);
         }
         
         .message-card:before {
@@ -131,36 +171,40 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(to right, var(--rose), var(--gold));
+            background: linear-gradient(to right, var(--sky-blue), var(--rose), var(--gold));
         }
         
         .card-title {
-            font-size: 1.8rem;
-            color: var(--charcoal);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--ice-blue);
             margin-bottom: 30px;
-            font-weight: 400;
             display: flex;
             align-items: center;
-            font-family: 'Playfair Display', serif;
         }
         
         .card-title i {
             margin-right: 15px;
-            color: var(--rose);
+            color: var(--gold);
         }
         
         .message {
             font-size: 1.2rem;
             line-height: 1.8;
-            color: #555;
+            color: #cbd5e1;
         }
         
         .message p {
             margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
         }
         
-        .message p:last-child {
-            margin-bottom: 0;
+        .message p:before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--sky-blue);
         }
         
         /* Photo Frame */
@@ -171,14 +215,15 @@
         .photo-frame {
             width: 100%;
             height: 500px;
-            background: linear-gradient(135deg, var(--champagne) 0%, #f5e6d3 100%);
-            border-radius: 2px;
+            background: linear-gradient(135deg, rgba(13, 42, 75, 0.8) 0%, rgba(45, 70, 185, 0.8) 100%);
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         
         .photo-frame:before {
@@ -188,7 +233,8 @@
             left: 20px;
             right: 20px;
             bottom: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 10px;
             z-index: 1;
         }
         
@@ -200,144 +246,144 @@
         }
         
         .heart-icon {
-            font-size: 5rem;
+            font-size: 6rem;
             color: var(--rose);
             margin-bottom: 30px;
-            animation: gentlePulse 3s infinite ease-in-out;
+            animation: gentleFloat 6s infinite ease-in-out;
+            text-shadow: 0 0 30px rgba(244, 114, 182, 0.5);
         }
         
-        @keyframes gentlePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(5deg); }
+            66% { transform: translateY(5px) rotate(-5deg); }
         }
         
         .photo-text {
-            font-size: 1.5rem;
-            color: var(--charcoal);
+            font-size: 1.8rem;
+            color: var(--ice-blue);
             font-style: italic;
             line-height: 1.6;
             max-width: 300px;
             margin: 0 auto;
+            font-family: 'Playfair Display', serif;
         }
         
         /* Floating Elements */
         .floating-element {
             position: absolute;
-            font-size: 1.8rem;
-            color: var(--gold);
-            opacity: 0.2;
+            font-size: 2rem;
+            color: var(--sky-blue);
+            opacity: 0.3;
             z-index: 0;
+            animation: floatAround 15s infinite linear;
         }
         
-        .fe-1 {
-            top: 30px;
-            right: 40px;
-            animation: floatUpDown 8s infinite ease-in-out;
+        @keyframes floatAround {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -20px) rotate(90deg); }
+            50% { transform: translate(0, -40px) rotate(180deg); }
+            75% { transform: translate(-20px, -20px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
         }
         
-        .fe-2 {
-            bottom: 60px;
-            left: 30px;
-            animation: floatUpDown 10s infinite ease-in-out;
-            animation-delay: 1s;
-        }
-        
-        .fe-3 {
-            top: 100px;
-            left: 40px;
-            animation: floatUpDown 9s infinite ease-in-out;
-            animation-delay: 2s;
-        }
-        
-        @keyframes floatUpDown {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        
-        /* Special Moments */
-        .moments-section {
+        /* Special Qualities */
+        .qualities-section {
             margin: 80px 0;
         }
         
-        .moments-title {
+        .qualities-title {
             text-align: center;
-            font-size: 2rem;
-            color: var(--charcoal);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--ice-blue);
             margin-bottom: 50px;
             font-weight: 300;
             position: relative;
-            font-family: 'Playfair Display', serif;
         }
         
-        .moments-title:after {
+        .qualities-title:after {
             content: '';
             position: absolute;
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 1px;
-            background-color: var(--rose);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to right, var(--sky-blue), var(--rose));
         }
         
-        .moments-grid {
+        .qualities-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
         
         @media (max-width: 768px) {
-            .moments-grid {
+            .qualities-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         
         @media (max-width: 500px) {
-            .moments-grid {
+            .qualities-grid {
                 grid-template-columns: 1fr;
             }
         }
         
-        .moment {
-            background: white;
-            padding: 30px;
+        .quality {
+            background: rgba(26, 54, 93, 0.6);
+            padding: 35px 25px;
             text-align: center;
-            border-radius: 2px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(232, 180, 188, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        .moment:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            border-color: rgba(232, 180, 188, 0.3);
+        .quality:hover {
+            transform: translateY(-10px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
         
-        .moment-icon {
-            font-size: 2.5rem;
-            color: var(--rose);
+        .quality:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--sky-blue), var(--rose));
+        }
+        
+        .quality-icon {
+            font-size: 2.8rem;
+            color: var(--sky-blue);
             margin-bottom: 20px;
-            height: 60px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
-        .moment-text {
+        .quality-text {
             font-size: 1.1rem;
-            color: #666;
-            font-style: italic;
+            color: #cbd5e1;
+            line-height: 1.6;
         }
         
         /* Final Message */
         .final-message {
             text-align: center;
-            padding: 60px 40px;
+            padding: 70px 50px;
             margin: 80px 0;
-            background: linear-gradient(to right, rgba(248, 245, 240, 0.8), rgba(247, 231, 206, 0.8));
+            background: rgba(13, 42, 75, 0.5);
             position: relative;
             overflow: hidden;
+            border-radius: 15px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
         
         .final-message:before {
@@ -347,7 +393,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            background: linear-gradient(to right, transparent, var(--sky-blue), transparent);
         }
         
         .final-message:after {
@@ -357,12 +403,13 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            background: linear-gradient(to right, transparent, var(--rose), transparent);
         }
         
         .closing-text {
-            font-size: 1.8rem;
-            color: var(--charcoal);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--ice-blue);
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto;
@@ -373,25 +420,32 @@
         
         .signature {
             margin-top: 40px;
-            font-size: 1.5rem;
-            color: var(--charcoal);
+            font-size: 1.8rem;
+            color: var(--gold);
             font-family: 'Playfair Display', serif;
+            letter-spacing: 2px;
         }
         
         /* Footer */
         .footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 50px 0 30px;
             margin-top: 60px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            color: #888;
-            font-size: 1rem;
+            border-top: 1px solid rgba(56, 189, 248, 0.2);
+            color: #94a3b8;
+            font-size: 1.1rem;
             letter-spacing: 1px;
         }
         
         .footer-heart {
             color: var(--rose);
             margin: 0 5px;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
         
         /* Music Toggle */
@@ -399,28 +453,30 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 50px;
-            height: 50px;
-            background: white;
+            width: 60px;
+            height: 60px;
+            background: rgba(26, 54, 93, 0.8);
+            backdrop-filter: blur(10px);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             z-index: 100;
-            border: 1px solid rgba(232, 180, 188, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             transition: all 0.3s ease;
         }
         
         .music-toggle:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(56, 189, 248, 0.6);
         }
         
         .music-toggle i {
-            font-size: 1.2rem;
-            color: var(--rose);
+            font-size: 1.5rem;
+            color: var(--sky-blue);
         }
         
         /* Scroll Reveal Animation */
@@ -434,68 +490,116 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Decorative Ornaments */
+        .ornament {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 2px solid rgba(56, 189, 248, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .ornament-1 {
+            top: 10%;
+            left: 5%;
+            animation: spin 60s linear infinite;
+        }
+        
+        .ornament-2 {
+            bottom: 15%;
+            right: 5%;
+            animation: spin 80s linear infinite reverse;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .birthday-title { font-size: 2.5rem; }
+            .name-highlight { font-size: 3rem; }
+            .date { font-size: 1.8rem; }
+            .card-title { font-size: 1.8rem; }
+            .closing-text { font-size: 1.6rem; }
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+    
+    <!-- Decorative Ornaments -->
+    <div class="ornament ornament-1"></div>
+    <div class="ornament ornament-2"></div>
+    
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <div class="birthday-title">Happy Birthday</div>
-            <div class="name-highlight">NOODLES MANDA</div>
-            <div class="date">December 31st</div>
+            <div class="birthday-title reveal">Happy Birthday</div>
+            <div class="name-highlight reveal">NOODLES MANDA</div>
+            <div class="date reveal">
+                <i class="fas fa-calendar-star"></i>
+                December 31st
+                <i class="fas fa-star"></i>
+            </div>
         </div>
         
         <!-- Main Content -->
         <div class="main-content">
             <!-- Message Card -->
             <div class="message-card reveal">
-                <div class="card-title"><i class="fas fa-heart"></i> Dearest NOODLES MANDA</div>
+                <div class="card-title"><i class="fas fa-gem"></i> My Dearest Love</div>
                 <div class="message">
-                    <p>On this special day, I want to celebrate the incredible person you are. Your presence in my life has been nothing short of a beautiful gift, and I am endlessly grateful for every moment we share.</p>
+                    <p>As the stars align on December 31st, I find myself reflecting on how incredibly blessed I am to know you. Your presence in my life is like a constellation of joy, guiding me through every moment with warmth and light.</p>
                     
-                    <p>As you celebrate another year of your wonderful journey, may you be surrounded by love, joy, and all the happiness you deserve. You bring light wherever you go, and your kindness touches everyone fortunate enough to know you.</p>
+                    <p>Today, we celebrate not just your birth, but the beautiful soul you are. Your kindness radiates like moonlight on still water, your laughter echoes like the sweetest melody, and your love illuminates even the darkest corners of my world.</p>
                     
-                    <p>December 31st marks not just the end of a year, but the celebration of a remarkable person. May this birthday be as beautiful and special as you are, filled with cherished moments and the warmth of love.</p>
+                    <p>May this birthday wrap you in the comfort of love and the promise of dreams fulfilled. As we stand at the threshold of a new year, I wish for you a journey filled with adventures that make your heart race and moments that take your breath away.</p>
                     
-                    <p>Wishing you a day that's as perfect as you are, and a year ahead filled with dreams realized and happiness multiplied.</p>
+                    <p>You deserve galaxies of happiness, oceans of love, and skies full of dreams come true. Happy Birthday, my beautiful NOODLES MANDA.</p>
                 </div>
             </div>
             
             <!-- Photo Section -->
             <div class="photo-section reveal">
                 <div class="photo-frame">
-                    <div class="floating-element fe-1">✦</div>
-                    <div class="floating-element fe-2">❦</div>
-                    <div class="floating-element fe-3">✧</div>
+                    <!-- Floating Elements -->
+                    <div class="floating-element" style="top: 20px; left: 30px;">✦</div>
+                    <div class="floating-element" style="bottom: 40px; right: 40px;">❦</div>
+                    <div class="floating-element" style="top: 100px; right: 20px;">✧</div>
                     
                     <div class="photo-content">
-                        <div class="heart-icon">💖</div>
+                        <div class="heart-icon">💙</div>
                         <div class="photo-text">
-                            "To the world, you may be one person, but to me, you are the world."
+                            "In a sky full of stars, you shine the brightest"
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Special Moments -->
-        <div class="moments-section">
-            <div class="moments-title">What Makes You Special</div>
-            <div class="moments-grid">
-                <div class="moment reveal">
-                    <div class="moment-icon"><i class="fas fa-smile"></i></div>
-                    <div class="moment-text">Your beautiful smile that brightens every room</div>
+        <!-- Special Qualities -->
+        <div class="qualities-section">
+            <div class="qualities-title reveal">What Makes You Radiant</div>
+            <div class="qualities-grid">
+                <div class="quality reveal">
+                    <div class="quality-icon"><i class="fas fa-sun"></i></div>
+                    <div class="quality-text">Your warmth that brightens every room you enter</div>
                 </div>
                 
-                <div class="moment reveal">
-                    <div class="moment-icon"><i class="fas fa-star"></i></div>
-                    <div class="moment-text">The way you see the good in everyone and everything</div>
+                <div class="quality reveal">
+                    <div class="quality-icon"><i class="fas fa-magic"></i></div>
+                    <div class="quality-text">The magical way you turn ordinary moments into memories</div>
                 </div>
                 
-                <div class="moment reveal">
-                    <div class="moment-icon"><i class="fas fa-gem"></i></div>
-                    <div class="moment-text">Your unique and wonderful personality</div>
+                <div class="quality reveal">
+                    <div class="quality-icon"><i class="fas fa-heart"></i></div>
+                    <div class="quality-text">Your compassionate heart that touches everyone you meet</div>
                 </div>
             </div>
         </div>
@@ -503,16 +607,17 @@
         <!-- Final Message -->
         <div class="final-message reveal">
             <div class="closing-text">
-                Today is your day — a celebration of the amazing person you are and all the wonderful things you bring to this world. May the year ahead be filled with beautiful surprises, laughter that fills your heart, and dreams that come true in the most beautiful ways.
+                Today, the universe pauses to celebrate you. May the year ahead be a canvas for your dreams, a stage for your talents, and a journey to your happiest self. You are loved more than words could ever capture.
             </div>
             <div class="signature">
-                With all my love, Yours PUNA KUTTY
+                Forever Yours
             </div>
         </div>
         
         <!-- Footer -->
         <div class="footer">
-            <p>Made with <span class="footer-heart">♥</span> for NOODLES MANDA's Birthday • December 31st</p>
+            <p>Made with <span class="footer-heart">♥</span> for NOODLES MANDA • December 31st Birthday Celebration</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">A night under the stars, dedicated to you</p>
         </div>
     </div>
     
@@ -522,6 +627,25 @@
     </div>
     
     <script>
+        // Create stars background
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 150;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                star.style.animationDuration = `${Math.random() * 2 + 2}s`;
+                starsContainer.appendChild(star);
+            }
+        }
+        
         // Gentle scroll reveal animation
         function revealOnScroll() {
             const reveals = document.querySelectorAll('.reveal');
@@ -537,8 +661,33 @@
             });
         }
         
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
+        // Create floating snowflakes/hearts
+        function createFloatingElements() {
+            const element = document.createElement('div');
+            element.innerHTML = Math.random() > 0.5 ? '❄' : '❦';
+            element.style.position = 'fixed';
+            element.style.fontSize = `${Math.random() * 20 + 15}px`;
+            element.style.color = Math.random() > 0.5 ? 'rgba(56, 189, 248, 0.3)' : 'rgba(244, 114, 182, 0.3)';
+            element.style.left = `${Math.random() * 100}%`;
+            element.style.top = '-50px';
+            element.style.zIndex = '0';
+            element.style.pointerEvents = 'none';
+            element.style.opacity = '0.4';
+            
+            document.body.appendChild(element);
+            
+            const duration = 15000 + Math.random() * 10000;
+            element.animate([
+                { transform: 'translateY(0) rotate(0deg)', opacity: 0 },
+                { transform: 'translateY(0) rotate(0deg)', opacity: 0.4 },
+                { transform: `translateY(100vh) rotate(${360 + Math.random() * 180}deg)`, opacity: 0 }
+            ], {
+                duration: duration,
+                easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+            });
+            
+            setTimeout(() => element.remove(), duration);
+        }
         
         // Music toggle
         const musicToggle = document.getElementById('musicToggle');
@@ -547,15 +696,15 @@
         
         musicToggle.addEventListener('click', function() {
             if (!audio) {
-                // Create a subtle birthday melody
-                audio = new Audio();
+                // Create a gentle melody
                 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
                 playGentleMelody(audioContext);
                 
                 musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+                musicToggle.style.borderColor = 'rgba(56, 189, 248, 0.6)';
+                musicToggle.style.boxShadow = '0 0 20px rgba(56, 189, 248, 0.4)';
                 isPlaying = true;
             } else {
-                // In a real implementation, you would toggle audio playback
                 musicToggle.innerHTML = isPlaying ? 
                     '<i class="fas fa-music"></i>' : 
                     '<i class="fas fa-volume-up"></i>';
@@ -566,12 +715,12 @@
         // Gentle melody function
         function playGentleMelody(audioContext) {
             const notes = [
-                { freq: 523.25, duration: 0.4 }, // C5
+                { freq: 523.25, duration: 0.6 }, // C5
                 { freq: 587.33, duration: 0.4 }, // D5
-                { freq: 659.25, duration: 0.4 }, // E5
+                { freq: 659.25, duration: 0.8 }, // E5
                 { freq: 698.46, duration: 0.6 }, // F5
-                { freq: 659.25, duration: 0.6 }, // E5
-                { freq: 698.46, duration: 0.8 }  // F5
+                { freq: 783.99, duration: 1.0 }, // G5
+                { freq: 880.00, duration: 1.2 }  // A5
             ];
             
             let time = audioContext.currentTime;
@@ -587,83 +736,60 @@
                 oscillator.type = 'sine';
                 
                 gainNode.gain.setValueAtTime(0, time);
-                gainNode.gain.linearRampToValueAtTime(0.1, time + 0.05);
+                gainNode.gain.linearRampToValueAtTime(0.08, time + 0.1);
                 gainNode.gain.exponentialRampToValueAtTime(0.001, time + note.duration);
                 
                 oscillator.start(time);
                 oscillator.stop(time + note.duration);
                 
-                time += note.duration;
+                time += note.duration - 0.2;
             });
         }
         
-        // Create gentle floating petals
-        function createFloatingPetals() {
-            const container = document.querySelector('.header');
-            const petalCount = 8;
+        // Initialize everything when page loads
+        window.addEventListener('load', function() {
+            createStars();
+            revealOnScroll();
             
-            for (let i = 0; i < petalCount; i++) {
-                setTimeout(() => {
-                    const petal = document.createElement('div');
-                    petal.style.position = 'absolute';
-                    petal.style.fontSize = '1.5rem';
-                    petal.style.color = 'rgba(232, 180, 188, 0.3)';
-                    petal.style.zIndex = '0';
-                    petal.style.pointerEvents = 'none';
-                    petal.style.left = `${Math.random() * 100}%`;
-                    petal.style.top = '0';
-                    petal.innerHTML = '❁';
-                    
-                    document.body.appendChild(petal);
-                    
-                    // Animate petal falling
-                    const duration = 8000 + Math.random() * 5000;
-                    petal.animate([
-                        { transform: 'translateY(0) rotate(0deg)', opacity: 0 },
-                        { transform: 'translateY(0) rotate(0deg)', opacity: 0.3 },
-                        { transform: `translateY(100vh) rotate(${360 + Math.random() * 180}deg)`, opacity: 0 }
-                    ], {
-                        duration: duration,
-                        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
-                    });
-                    
-                    // Remove after animation
-                    setTimeout(() => petal.remove(), duration);
-                }, i * 1500);
+            // Create initial floating elements
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createFloatingElements, i * 800);
             }
-        }
+            
+            // Continue creating floating elements periodically
+            setInterval(createFloatingElements, 3000);
+        });
         
-        // Start gentle petal animation
-        setTimeout(createFloatingPetals, 1000);
-        setInterval(createFloatingPetals, 15000);
+        window.addEventListener('scroll', revealOnScroll);
         
-        // Add a subtle cursor effect
+        // Add gentle cursor trail effect
         document.addEventListener('mousemove', function(e) {
-            const cursorEffect = document.createElement('div');
-            cursorEffect.style.position = 'fixed';
-            cursorEffect.style.width = '6px';
-            cursorEffect.style.height = '6px';
-            cursorEffect.style.borderRadius = '50%';
-            cursorEffect.style.backgroundColor = 'rgba(232, 180, 188, 0.2)';
-            cursorEffect.style.left = `${e.clientX - 3}px`;
-            cursorEffect.style.top = `${e.clientY - 3}px`;
-            cursorEffect.style.pointerEvents = 'none';
-            cursorEffect.style.zIndex = '9999';
-            
-            document.body.appendChild(cursorEffect);
-            
-            // Remove effect after animation
-            setTimeout(() => {
-                cursorEffect.style.transition = 'all 0.3s ease';
-                cursorEffect.style.opacity = '0';
-                cursorEffect.style.transform = 'scale(0)';
+            if (Math.random() > 0.7) {
+                const trail = document.createElement('div');
+                trail.style.position = 'fixed';
+                trail.style.width = '8px';
+                trail.style.height = '8px';
+                trail.style.borderRadius = '50%';
+                trail.style.backgroundColor = `rgba(${Math.random() > 0.5 ? '56, 189, 248' : '244, 114, 182'}, 0.2)`;
+                trail.style.left = `${e.clientX - 4}px`;
+                trail.style.top = `${e.clientY - 4}px`;
+                trail.style.pointerEvents = 'none';
+                trail.style.zIndex = '9999';
+                
+                document.body.appendChild(trail);
                 
                 setTimeout(() => {
-                    if (cursorEffect.parentNode) {
-                        cursorEffect.parentNode.removeChild(cursorEffect);
-                    }
-                }, 300);
-            }, 50);
+                    trail.style.transition = 'all 0.5s ease';
+                    trail.style.opacity = '0';
+                    trail.style.transform = 'scale(0)';
+                    
+                    setTimeout(() => {
+                        if (trail.parentNode) {
+                            trail.parentNode.removeChild(trail);
+                        }
+                    }, 500);
+                }, 100);
+            }
         });
     </script>
 </body>
