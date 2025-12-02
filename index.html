@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday NOODLES MANDA 💖</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --cream: #f8f5f0;
+            --rose: #e8b4bc;
+            --gold: #d4af37;
+            --champagne: #f7e7ce;
+            --charcoal: #2c2c2c;
+            --soft-pink: #ffebee;
+        }
+        
+        body {
+            background-color: var(--cream);
+            color: var(--charcoal);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Elegant Header */
+        .header {
+            text-align: center;
+            padding: 60px 0 40px;
+            position: relative;
+        }
+        
+        .header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+        
+        .birthday-title {
+            font-size: 3.2rem;
+            color: var(--charcoal);
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .name-highlight {
+            display: block;
+            font-size: 4.2rem;
+            color: var(--charcoal);
+            font-weight: 400;
+            margin: 30px 0;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .name-highlight:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: var(--rose);
+        }
+        
+        .date {
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            font-style: italic;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 60px 0;
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        /* Message Card */
+        .message-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 2px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border: 1px solid rgba(232, 180, 188, 0.2);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .message-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--rose), var(--gold));
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            margin-bottom: 30px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .card-title i {
+            margin-right: 15px;
+            color: var(--rose);
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .message p {
+            margin-bottom: 25px;
+        }
+        
+        .message p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Photo Frame */
+        .photo-section {
+            position: relative;
+        }
+        
+        .photo-frame {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--champagne) 0%, #f5e6d3 100%);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .photo-frame:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            z-index: 1;
+        }
+        
+        .photo-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            padding: 40px;
+        }
+        
+        .heart-icon {
+            font-size: 5rem;
+            color: var(--rose);
+            margin-bottom: 30px;
+            animation: gentlePulse 3s infinite ease-in-out;
+        }
+        
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .photo-text {
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            font-style: italic;
+            line-height: 1.6;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            font-size: 1.8rem;
+            color: var(--gold);
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .fe-1 {
+            top: 30px;
+            right: 40px;
+            animation: floatUpDown 8s infinite ease-in-out;
+        }
+        
+        .fe-2 {
+            bottom: 60px;
+            left: 30px;
+            animation: floatUpDown 10s infinite ease-in-out;
+            animation-delay: 1s;
+        }
+        
+        .fe-3 {
+            top: 100px;
+            left: 40px;
+            animation: floatUpDown 9s infinite ease-in-out;
+            animation-delay: 2s;
+        }
+        
+        @keyframes floatUpDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        /* Special Moments */
+        .moments-section {
+            margin: 80px 0;
+        }
+        
+        .moments-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--charcoal);
+            margin-bottom: 50px;
+            font-weight: 300;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .moments-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background-color: var(--rose);
+        }
+        
+        .moments-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .moments-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .moments-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .moment {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 2px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(232, 180, 188, 0.1);
+        }
+        
+        .moment:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-color: rgba(232, 180, 188, 0.3);
+        }
+        
+        .moment-icon {
+            font-size: 2.5rem;
+            color: var(--rose);
+            margin-bottom: 20px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .moment-text {
+            font-size: 1.1rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Final Message */
+        .final-message {
+            text-align: center;
+            padding: 60px 40px;
+            margin: 80px 0;
+            background: linear-gradient(to right, rgba(248, 245, 240, 0.8), rgba(247, 231, 206, 0.8));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-message:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+        
+        .final-message:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+        
+        .closing-text {
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .signature {
+            margin-top: 40px;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: #888;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .footer-heart {
+            color: var(--rose);
+            margin: 0 5px;
+        }
+        
+        /* Music Toggle */
+        .music-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 100;
+            border: 1px solid rgba(232, 180, 188, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .music-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .music-toggle i {
+            font-size: 1.2rem;
+            color: var(--rose);
+        }
+        
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="birthday-title">Happy Birthday</div>
+            <div class="name-highlight">NOODLES MANDA</div>
+            <div class="date">December 31st</div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Message Card -->
+            <div class="message-card reveal">
+                <div class="card-title"><i class="fas fa-heart"></i> Dearest NOODLES MANDA</div>
+                <div class="message">
+                    <p>On this special day, I want to celebrate the incredible person you are. Your presence in my life has been nothing short of a beautiful gift, and I am endlessly grateful for every moment we share.</p>
+                    
+                    <p>As you celebrate another year of your wonderful journey, may you be surrounded by love, joy, and all the happiness you deserve. You bring light wherever you go, and your kindness touches everyone fortunate enough to know you.</p>
+                    
+                    <p>December 31st marks not just the end of a year, but the celebration of a remarkable person. May this birthday be as beautiful and special as you are, filled with cherished moments and the warmth of love.</p>
+                    
+                    <p>Wishing you a day that's as perfect as you are, and a year ahead filled with dreams realized and happiness multiplied.</p>
+                </div>
+            </div>
+            
+            <!-- Photo Section -->
+            <div class="photo-section reveal">
+                <div class="photo-frame">
+                    <div class="floating-element fe-1">✦</div>
+                    <div class="floating-element fe-2">❦</div>
+                    <div class="floating-element fe-3">✧</div>
+                    
+                    <div class="photo-content">
+                        <div class="heart-icon">💖</div>
+                        <div class="photo-text">
+                            "To the world, you may be one person, but to me, you are the world."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Special Moments -->
+        <div class="moments-section">
+            <div class="moments-title">What Makes You Special</div>
+            <div class="moments-grid">
+                <div class="moment reveal">
+                    <div class="moment-icon"><i class="fas fa-smile"></i></div>
+                    <div class="moment-text">Your beautiful smile that brightens every room</div>
+                </div>
+                
+                <div class="moment reveal">
+                    <div class="moment-icon"><i class="fas fa-star"></i></div>
+                    <div class="moment-text">The way you see the good in everyone and everything</div>
+                </div>
+                
+                <div class="moment reveal">
+                    <div class="moment-icon"><i class="fas fa-gem"></i></div>
+                    <div class="moment-text">Your unique and wonderful personality</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Final Message -->
+        <div class="final-message reveal">
+            <div class="closing-text">
+                Today is your day — a celebration of the amazing person you are and all the wonderful things you bring to this world. May the year ahead be filled with beautiful surprises, laughter that fills your heart, and dreams that come true in the most beautiful ways.
+            </div>
+            <div class="signature">
+                With all my love, Yours PUNA KUTTY
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Made with <span class="footer-heart">♥</span> for NOODLES MANDA's Birthday • December 31st</p>
+        </div>
+    </div>
+    
+    <!-- Music Toggle -->
+    <div class="music-toggle" id="musicToggle">
+        <i class="fas fa-music"></i>
+    </div>
+    
+    <script>
+        // Gentle scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // Music toggle
+        const musicToggle = document.getElementById('musicToggle');
+        let audio = null;
+        let isPlaying = false;
+        
+        musicToggle.addEventListener('click', function() {
+            if (!audio) {
+                // Create a subtle birthday melody
+                audio = new Audio();
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                playGentleMelody(audioContext);
+                
+                musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+                isPlaying = true;
+            } else {
+                // In a real implementation, you would toggle audio playback
+                musicToggle.innerHTML = isPlaying ? 
+                    '<i class="fas fa-music"></i>' : 
+                    '<i class="fas fa-volume-up"></i>';
+                isPlaying = !isPlaying;
+            }
+        });
+        
+        // Gentle melody function
+        function playGentleMelody(audioContext) {
+            const notes = [
+                { freq: 523.25, duration: 0.4 }, // C5
+                { freq: 587.33, duration: 0.4 }, // D5
+                { freq: 659.25, duration: 0.4 }, // E5
+                { freq: 698.46, duration: 0.6 }, // F5
+                { freq: 659.25, duration: 0.6 }, // E5
+                { freq: 698.46, duration: 0.8 }  // F5
+            ];
+            
+            let time = audioContext.currentTime;
+            
+            notes.forEach((note, i) => {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = note.freq;
+                oscillator.type = 'sine';
+                
+                gainNode.gain.setValueAtTime(0, time);
+                gainNode.gain.linearRampToValueAtTime(0.1, time + 0.05);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, time + note.duration);
+                
+                oscillator.start(time);
+                oscillator.stop(time + note.duration);
+                
+                time += note.duration;
+            });
+        }
+        
+        // Create gentle floating petals
+        function createFloatingPetals() {
+            const container = document.querySelector('.header');
+            const petalCount = 8;
+            
+            for (let i = 0; i < petalCount; i++) {
+                setTimeout(() => {
+                    const petal = document.createElement('div');
+                    petal.style.position = 'absolute';
+                    petal.style.fontSize = '1.5rem';
+                    petal.style.color = 'rgba(232, 180, 188, 0.3)';
+                    petal.style.zIndex = '0';
+                    petal.style.pointerEvents = 'none';
+                    petal.style.left = `${Math.random() * 100}%`;
+                    petal.style.top = '0';
+                    petal.innerHTML = '❁';
+                    
+                    document.body.appendChild(petal);
+                    
+                    // Animate petal falling
+                    const duration = 8000 + Math.random() * 5000;
+                    petal.animate([
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 0 },
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 0.3 },
+                        { transform: `translateY(100vh) rotate(${360 + Math.random() * 180}deg)`, opacity: 0 }
+                    ], {
+                        duration: duration,
+                        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    });
+                    
+                    // Remove after animation
+                    setTimeout(() => petal.remove(), duration);
+                }, i * 1500);
+            }
+        }
+        
+        // Start gentle petal animation
+        setTimeout(createFloatingPetals, 1000);
+        setInterval(createFloatingPetals, 15000);
+        
+        // Add a subtle cursor effect
+        document.addEventListener('mousemove', function(e) {
+            const cursorEffect = document.createElement('div');
+            cursorEffect.style.position = 'fixed';
+            cursorEffect.style.width = '6px';
+            cursorEffect.style.height = '6px';
+            cursorEffect.style.borderRadius = '50%';
+            cursorEffect.style.backgroundColor = 'rgba(232, 180, 188, 0.2)';
+            cursorEffect.style.left = `${e.clientX - 3}px`;
+            cursorEffect.style.top = `${e.clientY - 3}px`;
+            cursorEffect.style.pointerEvents = 'none';
+            cursorEffect.style.zIndex = '9999';
+            
+            document.body.appendChild(cursorEffect);
+            
+            // Remove effect after animation
+            setTimeout(() => {
+                cursorEffect.style.transition = 'all 0.3s ease';
+                cursorEffect.style.opacity = '0';
+                cursorEffect.style.transform = 'scale(0)';
+                
+                setTimeout(() => {
+                    if (cursorEffect.parentNode) {
+                        cursorEffect.parentNode.removeChild(cursorEffect);
+                    }
+                }, 300);
+            }, 50);
+        });
+    </script>
+</body>
+</html>
